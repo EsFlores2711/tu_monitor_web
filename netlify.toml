@@ -5,5 +5,5 @@
 [functions]
   python_version = "3.9"      # O la versión de Python que prefieras (ej. "3.10", "3.11")
   external_packages = [ "requests" ] # Indicar las librerías externas que necesita tu función Python
-  # Puede ser útil añadir esto para depuración si la función no responde
+  # Puedes añadir esto para depuración si la función no responde:
   # NETLIFY_PYTHON_LOG_LEVEL = "DEBUG"
