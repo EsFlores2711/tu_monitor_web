@@ -3,5 +3,8 @@
   functions = ".netlify/functions"
 
 [functions]
-  external_packages = [ "requests" ]
+  # Esta es la nueva forma correcta para dependencias Python
+  python_packages = [ "requests" ]
+
+  # Elimina cualquier otra línea relacionada con external_packages o external_node_modules
   # NETLIFY_PYTHON_LOG_LEVEL = "DEBUG" # Puedes mantener esto o borrarlo
