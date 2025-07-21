@@ -2,5 +2,26 @@
   publish = "public"
   functions = ".netlify/functions"
 
-# Elimina completamente la sección [functions] de aquí.
-# Netlify detectará el requirements.txt en .netlify/functions automáticamente.
+[functions]
+  # Asegúrate de que este path es correcto para tu función Python.
+  # Netlify por defecto busca un handler.
+  # En este caso, el nombre del archivo es check_status.py
+  # y el nombre de la función dentro es 'handler'.
+  # Algunas configuraciones de Netlify lo requieren.
+  # Para Python, el formato de nombre de archivo es 'nombre_archivo.py' y la función es 'handler'.
+  # Así que el path sería ".netlify/functions/check_status.py" pero Netlify lo deduce con el functions dir.
+  # Solo necesitas asegurarte de que tu función se llama 'handler'.
+
+  # Para forzar la detección de Python y la versión:
+  python_version = "3.9" # O "3.10" o "3.11" - elige una versión que Netlify soporte.
+                         # Si esta línea causa "must be an object" de nuevo,
+                         # la quitaremos y probaremos otra estrategia.
+
+  # Asegúrate de que las dependencias se instalen correctamente.
+  # Netlify las debería buscar en requirements.txt en la raíz de las funciones.
+  # Si requirements.txt NO está en .netlify/functions/, podrías necesitar esto,
+  # pero si está en la raíz del proyecto, el [functions] block lo procesará.
+  # Si sigue fallando la instalación, probaremos con external_packages de nuevo pero con la sintaxis correcta si es un error de Netlify.
+
+  # Para logs detallados durante el despliegue (muy útil si falla):
+  # NETLIFY_PYTHON_LOG_LEVEL = "DEBUG"
