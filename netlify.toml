@@ -1,9 +1,7 @@
 [build]
-  publish = "public"          # Directorio donde están tus archivos HTML/CSS/JS
-  functions = ".netlify/functions" # Directorio donde están tus funciones Lambda de Python
+  publish = "public"
+  functions = ".netlify/functions"
 
 [functions]
-  python_version = "3.9"      # O la versión de Python que prefieras (ej. "3.10", "3.11")
-  external_packages = [ "requests" ] # Indicar las librerías externas que necesita tu función Python
-  # Puedes añadir esto para depuración si la función no responde:
-  # NETLIFY_PYTHON_LOG_LEVEL = "DEBUG"
+  external_packages = [ "requests" ]
+  # NETLIFY_PYTHON_LOG_LEVEL = "DEBUG" # Puedes mantener esto o borrarlo
